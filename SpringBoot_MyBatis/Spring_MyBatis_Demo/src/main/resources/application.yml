@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://192.168.43.167:3306/mungerTest01
+    username: root
+    password: Munger_123
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  typeAliasesPackage: com.mungerz.dao
+  mapperLocations: classpath:mapper/*.xml

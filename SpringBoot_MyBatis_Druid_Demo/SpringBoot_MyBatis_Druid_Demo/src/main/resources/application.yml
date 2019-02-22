@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+
+  #配置数据源
+  datasource:
+    url: jdbc:mysql://192.168.43.167:3306/mungerTest01
+    username: root
+    password: Munger_123
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 10
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    #exceptionSorter: true
+    testOnReturn: false
+    poolPreparedStatements: true
+    filter: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    useGlobalDataSourceStat: true
+
+mybatis:
+  typeAliasesPackage: com.mungerz.dao
+  mapperLocations: classpath:mapper/*.xml
